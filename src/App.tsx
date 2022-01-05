@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import "./App.css";
+import { Button } from "./components/Button";
+import { Container } from "./components/Container";
+import Screen from "./components/DisplayScreen";
+import Pad from "./components/Pad";
+import { GlobalStyle } from "./components/Styles/GlobalStyles";
+import { ThemeButton } from "./components/ThemeButton";
+
+import { useThemeContext } from "./Context/ThemeContext";
+import {} from "./Provider/ThemeContextProvider";
+
+import { darkTheme, lightTheme } from "./Theme/Theme";
+//import DarkModeIcon from "@material-ui/icons/DarkModeIcon";
 
 function App() {
+  const { theme, toggleTheme } = useThemeContext();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyle />
+      <Container>
+        <ThemeButton
+          onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          {theme === "light" ? (
+            <i className="far fa-sun"></i>
+          ) : (
+            <i className="far fa-moon"></i>
+          )}
+        </ThemeButton>
+        <Screen />
+        <Pad></Pad>
+      </Container>
+    </ThemeProvider>
   );
 }
 
