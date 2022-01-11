@@ -1,8 +1,5 @@
-import React, { ReactNode, useState } from "react";
-import ThemeContext, {
-  ThemeContextData,
-  themeContextDataDefault,
-} from "../Context/ThemeContext";
+import { ReactNode, useState } from "react";
+import ThemeContext, { themeContextDataDefault } from "../Context/ThemeContext";
 interface ThemeContextProps {
   children: ReactNode;
 }

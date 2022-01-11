@@ -1,14 +1,11 @@
 import { ThemeProvider } from "styled-components";
 import "./App.css";
-import { Button } from "./components/Button";
 import { Container } from "./components/Container";
 import Screen from "./components/DisplayScreen";
 import Pad from "./components/Pad";
 import { GlobalStyle } from "./components/Styles/GlobalStyles";
 import { ThemeButton } from "./components/ThemeButton";
-
 import { useThemeContext } from "./Context/ThemeContext";
-import {} from "./Provider/ThemeContextProvider";
 
 import { darkTheme, lightTheme } from "./Theme/Theme";
 //import DarkModeIcon from "@material-ui/icons/DarkModeIcon";

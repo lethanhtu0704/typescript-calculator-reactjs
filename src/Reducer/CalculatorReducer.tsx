@@ -4,7 +4,7 @@ import {
   initCalculatorState,
 } from "../Context/CalculatorContext";
 
-const CalculatorReducer = (
+export const CalculatorReducer = (
   state: CalculatorState,
   action: CalculatorAction
 ) => {

@@ -45,7 +45,7 @@ export const Screen = () => {
           : ""} */}
 
         {`${
-          state.result != 0 || typeof state.pendingOperator !== "undefined"
+          state.result !== 0 || typeof state.pendingOperator !== "undefined"
             ? state.result
             : ""
         }${
